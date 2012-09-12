@@ -57,6 +57,11 @@
     step = 0;
     [stepLabel setText:[NSString stringWithFormat:@"%d", step]];
     isGameOn = YES;
+    if(self.map){
+        for(int i = 0; i < rowCount * columnCount; i++){
+            [(Box*)[map objectAtIndex:0] removeFromSuperview];
+        }
+    }
     NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:rowCount * columnCount];
     for(int i = 0; i < rowCount; i++){
         for(int j = 0; j < columnCount; j++){
